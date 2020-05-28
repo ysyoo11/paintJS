@@ -7,7 +7,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  paddint-top: 50px;
+  padding: 50px 0px;
+  background-size: cover;
 }
 
 .js-canvas {
@@ -20,6 +21,33 @@ body {
 
 .controls {
   margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls__btns {
+  margin-bottom: 30px;
+}
+
+.controls__btns button {
+  all: unset;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px 0px;
+  width: 70px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.controls__btns button:active {
+  transform: scale(0.98);
 }
 
 .js-colors {
@@ -31,4 +59,8 @@ body {
   height: 50px;
   cursor: pointer;
   border-radius: 25px;
+}
+
+.js-range {
+  margin-bottom: 30px;
 }
