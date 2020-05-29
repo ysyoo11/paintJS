@@ -36,6 +36,7 @@ function onMouseMove(event) {
     ctx.stroke();
   }
 }
+//if(!painting) means "when I'm not painting".
 
 function handleColorClick(event) {
   const color = event.target.style.backgroundColor;
@@ -48,7 +49,7 @@ function handleRangeChange(event) {
   ctx.lineWidth = size * 2;
 }
 
-function handleModeClick(event) {
+function handleModeClick() {
   if (filling === true) {
     filling = false;
     mode.innerText = "Fill";
@@ -71,6 +72,7 @@ if (canvas) {
   canvas.addEventListener("mouseleave", stopPainting);
   canvas.addEventListener("click", handleCanvasClick);
 }
+//painting 변수의 true/false (boolean) 값을 지정하는 역할을 위에서 한다.
 
 Array.from(colors).forEach((color) =>
   color.addEventListener("click", handleColorClick)
