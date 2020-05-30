@@ -4,6 +4,7 @@ const colors = document.getElementsByClassName("js-color");
 const range = document.querySelector(".js-range");
 const mode = document.querySelector(".js-mode");
 const saveBtn = document.querySelector(".js-save");
+const clearBtn = document.querySelector(".js-clear");
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
@@ -19,6 +20,7 @@ ctx.lineWidth = 2.5;
 
 let painting = false;
 let filling = false;
+let clearing = false;
 
 function stopPainting() {
   painting = false;
@@ -68,6 +70,10 @@ function handleCanvasClick() {
   }
 }
 
+function handleClearClick() {
+  ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+}
+
 function handleCM(event) {
   event.preventDefault();
 }
@@ -101,6 +107,9 @@ if (range) {
 
 if (mode) {
   mode.addEventListener("click", handleModeClick);
+}
+if (clearBtn) {
+  clearBtn.addEventListener("click", handleClearClick);
 }
 
 if (saveBtn) {
